@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "ticketsapi.login.username",
+    "type": "java.lang.String",
+    "description": "A description for 'ticketsapi.login.username'"
+  },
+  {
+    "name": "ticketsapi.url.login",
+    "type": "java.lang.String",
+    "description": "A description for 'ticketsapi.url.login'"
+  },
+  {
+    "name": "ticketsapi.login.password",
+    "type": "java.lang.String",
+    "description": "A description for 'ticketsapi.login.password'"
+  },
+  {
+    "name": "ticketsapi.url.postid",
+    "type": "java.lang.String",
+    "description": "A description for 'ticketsapi.url.postid'"
+  }
+]}
