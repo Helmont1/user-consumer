@@ -88,16 +88,16 @@ public class KeycloakService {
         keycloakUser.setEnabled(true);
         keycloakUser.setFirstName(user.getUserName());
         keycloakUser.setCredentials(
-                Collections.singletonList(createCredentials(user)));
+                Collections.singletonList(createCredentials()));
 
         return keycloakUser;
     }
 
-    private CredentialRepresentation createCredentials(UserKeycloakDTO user) {
+    private CredentialRepresentation createCredentials() {
         var credential = new CredentialRepresentation();
         credential.setType(CredentialRepresentation.PASSWORD);
-        credential.setTemporary(true);
-        credential.setValue(user.getEmail());
+        credential.setTemporary(false);
+        credential.setValue("ticket123");
         return credential;
     }
 
