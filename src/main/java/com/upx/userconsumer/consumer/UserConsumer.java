@@ -23,8 +23,8 @@ public class UserConsumer {
         try {
             var keycloakId = keycloakService.registerUser(userKeycloak);
             ticketsApiService.postKeycloakId(keycloakId);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } catch (Exception ignored) {
+            // ignored
         }
     }
 }

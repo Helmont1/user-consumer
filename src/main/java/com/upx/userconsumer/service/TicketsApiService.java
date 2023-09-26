@@ -39,7 +39,7 @@ public class TicketsApiService {
         var headers = new HttpHeaders();
         headers.set("Authorization", "Bearer " + login());
         var response = restTemplate.postForEntity(env.getProperty("ticketsapi.url.keycloak"), keycloakId, Void.class);
-        if (response.getStatusCode() != HttpStatus.OK) {
+        if (response.getStatusCode() != HttpStatus.CREATED ) {
             throw new RuntimeException("Error posting keycloak id");
         }
     }
