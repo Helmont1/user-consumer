@@ -24,12 +24,15 @@ import com.upx.userconsumer.model.UserKeycloakDTO;
 public class KeycloakService {
     private String token;
 
+    private Keycloak keycloak;
+
     public KeycloakService(Keycloak keycloak) {
-        this.token = keycloak.tokenManager().getAccessToken().getToken();
+        this.keycloak = keycloak;
     }
 
     public String registerUser(UserKeycloakDTO userKeycloak) {
         try {
+            this.token = keycloak.tokenManager().getAccessToken().getToken();
             var keycloakUser = createUserRepresentation(userKeycloak);
             return registerUserOnKeycloak(keycloakUser);
         } catch (Exception e) {
